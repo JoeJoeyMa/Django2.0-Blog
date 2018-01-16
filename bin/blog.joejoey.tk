@@ -1,0 +1,41 @@
+#Nginx
+server
+    {
+     	listen 80;
+        server_name joejoey.tk;  # 改成你的域名
+        root  /www/wwwroot;  # 改成你网站的根目录
+        #添加如下内容即可防止爬虫
+        
+
+        location /media  {
+        alias /www/wwwroot;  # your Django project's media files - amend as required   模版中的/home/www改成上面创建网站的路径/www/wwwroot
+        }
+
+	location /static
+        {
+	alias  /www/wwwroot; #静态文件地址，js/css   模版中的/home/www改成上面创建网站的路径/www/wwwroot
+        expires  12h;
+        }
+
+	location /
+        {
+	include uwsgi_params;
+        uwsgi_pass 127.0.0.1:8080;
+        }
+
+    }
+
+[uwsgi]
+
+# variables
+projectname = DjangoBlog-master                        # 项目名字
+projectdomain = 'www.joejoey.tk'              # 项目域名
+
+
+# config
+chdir= /www/wwwroot
+plungins = python
+socket = 127.0.0.1:8080                        # 运行端口
+module = DjangoBlog.wsgi:application
+master = True
+vacuum = True
