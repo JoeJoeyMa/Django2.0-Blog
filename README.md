@@ -86,6 +86,8 @@ http://joejoey.tk/article/2018/1/15/2.html
 
 
  浏览器打开: http://127.0.0.1:8000/  就可以看到效果了。
+ 可以在这里查看已经搭建好的网站
+ http://joejoey.tk/
  
  
 
