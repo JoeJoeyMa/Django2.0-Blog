@@ -1,6 +1,6 @@
 # DjangoBlog
 
-基于`python3.5`和`Django2.0`的博客。   
+基于`python3.6`和`Django2.0`的博客。   
 
 
 ## 主要功能：
@@ -100,12 +100,12 @@ http://joejoey.tk/article/2018/1/15/2.html
 宝塔部署 centos+ nginx + uwsgi + django(python3)环境配置
 **
 
-环境需求： Centos 6 x86_64 Python3 搭建库包括可在github上查看https://github.com/JoeJoeyMa/Django2.0-Blog appdirs==1.4.3 bottle==0.12.13 certifi==2017.11.5 chardet==3.0.4 coverage==4.4.2 Django==2.0.1 django-appconf==1.0.2 django-autoslug==1.9.3 django-compressor==2.2 django-debug-toolbar==1.9.1 django-haystack==2.6.1 django-ipware==1.1.6 django-pagedown==1.0.4 django-uuslug==1.1.8 idna==2.6 jieba==0.39 jsonpickle==0.9.5 markdown2==2.3.5 mistune==0.8.3 olefile==0.44 packaging==16.8 Pillow==5.0.0 Pygments==2.2.0 PyMySQL==0.8.0 pyparsing==2.2.0 python-memcached==1.59 python-slugify==1.2.4 pytz==2017.3 rcssmin==1.0.6 requests==2.18.4 rjsmin==1.0.12 six==1.11.0 sqlparse==0.2.4 Unidecode==1.0.22 urllib3==1.22 webencodings==0.5.1 WeRoBot==1.2.0 Whoosh==2.7.4 xmltodict==0.11.0
+### 环境需求： Centos 6 x86_64 Python3 搭建库包括可在github上查看https://github.com/JoeJoeyMa/Django2.0-Blog appdirs==1.4.3 bottle==0.12.13 certifi==2017.11.5 chardet==3.0.4 coverage==4.4.2 Django==2.0.1 django-appconf==1.0.2 django-autoslug==1.9.3 django-compressor==2.2 django-debug-toolbar==1.9.1 django-haystack==2.6.1 django-ipware==1.1.6 django-pagedown==1.0.4 django-uuslug==1.1.8 idna==2.6 jieba==0.39 jsonpickle==0.9.5 markdown2==2.3.5 mistune==0.8.3 olefile==0.44 packaging==16.8 Pillow==5.0.0 Pygments==2.2.0 PyMySQL==0.8.0 pyparsing==2.2.0 python-memcached==1.59 python-slugify==1.2.4 pytz==2017.3 rcssmin==1.0.6 requests==2.18.4 rjsmin==1.0.12 six==1.11.0 sqlparse==0.2.4 Unidecode==1.0.22 urllib3==1.22 webencodings==0.5.1 WeRoBot==1.2.0 Whoosh==2.7.4 xmltodict==0.11.0
 
-安装需要所有库(已安装或有省略本步）
+### 安装需要所有库(已安装或有省略本步）
 pip install -r requirements.txt
 
-2.宝塔安装LNMP 使用宝塔还是方便很多的
+### 2.宝塔安装LNMP 使用宝塔还是方便很多的
 
 Centos安装命令：
 
@@ -129,11 +129,11 @@ enter image description here
 
 先输入域名 再选择目录 enter image description here 点击右边箭头指的地方选择网站根目录 enter image description here 然后项目内找到 settingt.py 文件 点击编辑
 
-域名设置
+### 域名设置
 修改为自己的域名
 ALLOWED_HOSTS = [ '.com', 'com', ]
 
-mysql 设置
+### mysql 设置
 修改为自己的配置
 DATABASES = {
 
@@ -155,7 +155,7 @@ DATABASES = {
 python manage.py migrate # 通过djang ORM 建立所需数据库表
 python manage.py runserver # 测试项目是否运行 如果没有问题 Ctrl + C 退出进程 开始创建管理员帐号 python manage.py createsuperuser 按照提示创建管理员帐号 创建完成后进行下一步
 
-打开宝塔面板进入文件管理 enter image description here 编辑Nginx配置模版 uwsgi.ini
+### 打开宝塔面板进入文件管理 enter image description here 编辑Nginx配置模版 uwsgi.ini
 
 [uwsgi]
 
@@ -165,7 +165,8 @@ projectname = DjangoBlog-master # 项目名字 projectdomain = 'www.joejoey.tk' 
 config
 chdir= /www/wwwroot/joejoey.tk/blog/DjangoBlog-master plungins = python socket = 127.0.0.1:8080 # 运行端口 module = DjangoBlog.wsgi:application master = True vacuum = True
 
-回到站点管理 点击设置 enter image description here enter image description here 里面内容全部删除 然后修改
+### 回到站点管理 点击设置 enter image description here enter image description here 里面内容全部删除 然后修改
+
 
 server { listen 80; server_name joejoey.tk; # 改成你的域名 root /www/wwwroot/joejoey.tk/blog/DjangoBlog-master; # 改成你网站的根目录
 
@@ -187,6 +188,8 @@ include uwsgi_params;
     }
 
 }
-最后运行项目
+
+### 最后运行项目
+
 
 uwsgi uwsgi.ini
