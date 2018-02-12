@@ -1,6 +1,11 @@
 # DjangoBlog
 
-基于`python3.6`和`Django2.0`的博客。   
+基于`python3.6`和`Django2.0`的博客。 
+
+
+
+![Aaron Swartz](https://raw.githubusercontent.com/JoeJoeyMa/Django2.0-Blog/master/img/1.JPG)
+
 
 
 ## 主要功能：
