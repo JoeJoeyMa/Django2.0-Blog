@@ -1,5 +1,5 @@
 appdirs==1.4.3
-bottle==0.12.13
+bottle==0.12.20
 certifi==2017.11.5
 chardet==3.0.4
 coverage==4.4.2
