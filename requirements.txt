@@ -1,6 +1,6 @@
 appdirs==1.4.3
 bottle==0.12.13
-certifi==2017.11.5
+certifi==2022.12.7
 chardet==3.0.4
 coverage==4.4.2
 Django==2.0.1
